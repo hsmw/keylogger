@@ -1,0 +1,23 @@
+<template name="Header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Keylogger</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class={{#if active.register}}"active"{{/if}}><a href="/">Register</a></li>
+                    <li class={{#if active.transactions}}"active"{{/if}}><a href="/transactions">Transactions</a></li>
+                    {{#if currentUser}}
+                        <li class={{#if active.keys}}"active"{{/if}}><a href="/keys">Keys</a></li>
+                        <li class={{#if active.rules}}"active"{{/if}}><a href="/rules">Rules</a></li>
+                        <li class={{#if active.employees}}"active"{{/if}}><a href="/employees">Employees</a></li>
+                    {{/if}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{> loginButtons}}
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+</template>
