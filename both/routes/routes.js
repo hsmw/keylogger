@@ -30,3 +30,14 @@ FlowRouter.route('/employees', {
         });
     }
 });
+
+FlowRouter.route('/transactions', {
+    name: 'transactions',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'transactions',
+            footer: 'Footer'
+        });
+    }
+});
