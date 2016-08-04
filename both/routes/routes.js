@@ -41,3 +41,14 @@ FlowRouter.route('/transactions', {
         });
     }
 });
+
+FlowRouter.route('/rules', {
+    name: 'rules',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'rules',
+            footer: 'Footer'
+        })
+    }
+})
