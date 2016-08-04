@@ -29,3 +29,5 @@ EmployeeSchema = new SimpleSchema({
         }
     }
 })
+
+Employees.attachSchema(EmployeeSchema)

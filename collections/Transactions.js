@@ -6,7 +6,7 @@ Transactions.allow({
     }
 });
 
-TransactionsSchema = new SimpleSchema({
+TransactionSchema = new SimpleSchema({
     key: {
         type: Number,
         label: "Key Number",
@@ -45,6 +45,6 @@ TransactionsSchema = new SimpleSchema({
         },
         optional: true
     }
-});
+})
 
-Transactions.attachSchema(TransactionsSchema);
+Transactions.attachSchema(TransactionSchema)
