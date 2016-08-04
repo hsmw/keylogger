@@ -6,7 +6,7 @@ Template.transactions.onCreated(function() {
 })
 
 Template.transactions.helpers({
-    transactions: function() {
-        return Transactions.find();
+    transaction: function() {
+        return Transactions.find()
     }
 })

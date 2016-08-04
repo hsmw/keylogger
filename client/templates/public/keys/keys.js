@@ -6,7 +6,7 @@ Template.keys.onCreated(function() {
 });
 
 Template.keys.helpers({
-    keys: function() {
+    key: function() {
         return Keys.find();
     }
 });
