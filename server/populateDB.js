@@ -43,5 +43,9 @@ Meteor.startup(function(){
             key: keyNumber,
             employee: empId
         })
+
+        Rules.insert({
+            name: faker.name.jobType()
+        })
     }
 });
