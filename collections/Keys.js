@@ -1,10 +1,10 @@
-Keys = new Mongo.Collection('keys');
+Keys = new Mongo.Collection('keys')
 
 Keys.allow({
     insert: function(userId, doc) {
-        return Meteor.user() == "admin";
+        return Meteor.user() == "admin"
     }
-});
+})
 
 KeySchema = new SimpleSchema({
     number: {
@@ -21,13 +21,13 @@ KeySchema = new SimpleSchema({
         label: "Created At",
         autoValue: function() {
             if (this.isInsert) {
-                return new Date();
+                return new Date()
             }
         },
         autoform: {
             type: "hidden"
         }
     }
-});
+})
 
-Keys.attachSchema(KeySchema);
+Keys.attachSchema(KeySchema)

@@ -5,20 +5,20 @@ FlowRouter.route('/', {
             header: 'Header',
             body: 'register',
             footer: 'Footer'
-        });
+        })
     }
-});
+})
 
 FlowRouter.route('/keys', {
     name: 'keys',
     action() {
         BlazeLayout.render('applicationLayout', {
             header: 'Header',
-            body: 'createKey',
+            body: 'keys',
             footer: 'Footer'
-        });
+        })
     }
-});
+})
 
 FlowRouter.route('/employees', {
     name: 'employees',
@@ -27,9 +27,9 @@ FlowRouter.route('/employees', {
             header: 'Header',
             body: 'employees',
             footer: 'Footer'
-        });
+        })
     }
-});
+})
 
 FlowRouter.route('/transactions', {
     name: 'transactions',
@@ -38,9 +38,9 @@ FlowRouter.route('/transactions', {
             header: 'Header',
             body: 'transactions',
             footer: 'Footer'
-        });
+        })
     }
-});
+})
 
 FlowRouter.route('/rules', {
     name: 'rules',
