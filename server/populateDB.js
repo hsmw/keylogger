@@ -1,4 +1,5 @@
 Meteor.startup(function(){
+
     Keys.remove({}, (err,numRm) => {
         if (err) {
             console.log("Error: ",err)
@@ -6,20 +7,30 @@ Meteor.startup(function(){
             console.log("Keys removed: ",numRm)
         }
     })
+
     Employees.remove({}, (err,numRm) => {
         if (err) {
             console.log("Error: ",err)
         } else {
             console.log("Employees removed: ",numRm)
         }
-    });
+    })
+
     Transactions.remove({}, (err,numRm) => {
         if (err) {
             console.log("Error: ",err)
         } else {
             console.log("Transactions removed: ",numRm)
         }
-    });
+    })
+
+    Rules.remove({}, (err,numRm) => {
+        if (err) {
+            console.log("Error: ",err)
+        } else {
+            console.log("Rules removed: ",numRm)
+        }
+    })
 
     let count = 10
 
@@ -48,4 +59,4 @@ Meteor.startup(function(){
             name: faker.name.jobType()
         })
     }
-});
+})

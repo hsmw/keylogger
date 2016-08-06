@@ -1,8 +1,8 @@
-Rules = new Mongo.Collection('rules');
+Rules = new Mongo.Collection('rules')
 
 Rules.allow({
     insert: function(userId, doc) {
-        return Meteor.user() == "admin";
+        return Meteor.user() == "admin"
     }
 })
 

@@ -8,9 +8,9 @@
                 <ul class="nav navbar-nav">
                     <li class={{#if active.register}}"active"{{/if}}><a href="/">Register</a></li>
                     <li class={{#if active.transactions}}"active"{{/if}}><a href="/transactions">Transactions</a></li>
+                    <li class={{#if active.keys}}"active"{{/if}}><a href="/keys">Keys</a></li>
+                    <li class={{#if active.rules}}"active"{{/if}}><a href="/rules">Rules</a></li>
                     {{#if currentUser}}
-                        <li class={{#if active.keys}}"active"{{/if}}><a href="/keys">Keys</a></li>
-                        <li class={{#if active.rules}}"active"{{/if}}><a href="/rules">Rules</a></li>
                         <li class={{#if active.employees}}"active"{{/if}}><a href="/employees">Employees</a></li>
                     {{/if}}
                 </ul>

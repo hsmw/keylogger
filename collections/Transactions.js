@@ -1,10 +1,10 @@
-Transactions = new Mongo.Collection('transactions');
+Transactions = new Mongo.Collection('transactions')
 
 Transactions.allow({
     insert: function(userId, doc) {
-        return !!userId;
+        return !!userId
     }
-});
+})
 
 TransactionSchema = new SimpleSchema({
     key: {
@@ -16,7 +16,7 @@ TransactionSchema = new SimpleSchema({
         type: String,
         label: "Employee ID",
         optional: function() {
-            return !this.isInsert;
+            return !this.isInsert
         }
     },
     checkedOut: {
@@ -24,7 +24,7 @@ TransactionSchema = new SimpleSchema({
         label: "Checked Out",
         autoValue: function() {
             if (this.isInsert) {
-                return new Date();
+                return new Date()
             }
         },
         autoform: {
@@ -37,7 +37,7 @@ TransactionSchema = new SimpleSchema({
         label: "Checked In",
         autoValue: function() {
             if (this.isUpdate) {
-                return new Date();
+                return new Date()
             }
         },
         autoform: {

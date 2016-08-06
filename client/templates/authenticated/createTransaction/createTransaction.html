@@ -1,0 +1,5 @@
+<template name="createTransaction">
+    {{#if currentUser}} {{! This will need to allow for IP auth in the future}}
+        {{> quickForm collection="Transactions" id="registerTransaction" type="insert" class="createTransaction"}}
+    {{/if}}
+</template>

@@ -1,0 +1,5 @@
+<template name="createKey">
+    {{#if currentUser}} {{! This will need to change to admin}}
+        {{> quickForm collection="Keys" id="createKeyForm" type="insert" class=""}}
+    {{/if}}
+</template>

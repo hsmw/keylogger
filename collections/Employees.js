@@ -1,8 +1,8 @@
-Employees = new Mongo.Collection('employees');
+Employees = new Mongo.Collection('employees')
 
 Employees.allow({
     insert: function(userId, doc) {
-        return Meteor.user() == "admin";
+        return Meteor.user() == "admin"
     }
 })
 
