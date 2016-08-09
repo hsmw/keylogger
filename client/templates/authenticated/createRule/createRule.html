@@ -1,0 +1,5 @@
+<template name="createRule">
+    {{#if currentUser}} {{! This will need to change to admin}}
+        {{> quickForm collection="Rules" id="createRuleForm" type="insert" class=""}}
+    {{/if}}
+</template>
