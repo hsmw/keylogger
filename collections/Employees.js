@@ -1,9 +1,9 @@
 Employees = new Mongo.Collection('employees')
 
-Employees.allow({
-    insert: function(userId, doc) {
-        return Meteor.user() == "admin"
-    }
+Employees.deny({
+    insert() { return true },
+    update() { return true },
+    remove() { return true }
 })
 
 EmployeeSchema = new SimpleSchema({

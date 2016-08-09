@@ -1,3 +1,3 @@
 Meteor.publish('rules', function() {
-    return Rules.find()
+    return Rules.find({},{fields:{name:1}})
 })

@@ -1,3 +1,3 @@
 Meteor.publish('employees', function() {
-    return Employees.find()
+    return Employees.find({},{fields:{'name':1,'empId':1}})
 })

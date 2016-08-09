@@ -2,6 +2,7 @@ Template.createTransaction.onCreated(function() {
     var self = this
     self.autorun(function() {
         self.subscribe('keys')
+        self.subscribe('transactions')
     })
 })
 
