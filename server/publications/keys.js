@@ -1,7 +1,3 @@
 Meteor.publish('keys', function() {
-    return Keys.find()
-})
-
-Meteor.publish('transactions', function() {
-    return Transactions.find()
+    return Keys.find({},{fields:{number:1,name:1}})
 })
