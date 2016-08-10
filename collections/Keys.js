@@ -1,20 +1,18 @@
 Keys = new Mongo.Collection('keys')
 
-Keys.allow({
-    insert: function(userId, doc) {
-        return Meteor.user() == "admin"
-    }
-})
-
 KeySchema = new SimpleSchema({
     number: {
         type: Number,
         label: "Key Number",
-        unique: true
+        unique: true,
+        min: 0,
+        max: 999999999
     },
     name: {
         type: String,
-        label: "Key Name"
+        label: "Key Name",
+        min: 3,
+        max: 128
     },
     createdAt: {
         type: Date,
@@ -26,7 +24,8 @@ KeySchema = new SimpleSchema({
         },
         autoform: {
             type: "hidden"
-        }
+        },
+        optional: true
     }
 })
 

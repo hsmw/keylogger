@@ -1,5 +1,5 @@
 <template name="createRule">
     {{#if currentUser}} {{! This will need to change to admin}}
-        {{> quickForm collection="Rules" id="createRuleForm" type="insert" class=""}}
+        {{> quickForm collection="Rules" id="createRuleForm" type="method" meteormethod="newRule" class=""}}
     {{/if}}
 </template>

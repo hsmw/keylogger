@@ -1,15 +1,11 @@
 Rules = new Mongo.Collection('rules')
 
-Rules.allow({
-    insert: function(userId, doc) {
-        return Meteor.user() == "admin"
-    }
-})
-
 RuleSchema = new SimpleSchema({
     name: {
         type: String,
-        label: "Rule Name"
+        label: "Rule Name",
+        min: 3,
+        max: 128
     },
     createdAt: {
         type: Date,
@@ -21,7 +17,8 @@ RuleSchema = new SimpleSchema({
         },
         autoform: {
             type: "hidden"
-        }
+        },
+        optional: true
     }
 })
 
