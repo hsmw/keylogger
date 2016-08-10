@@ -1,23 +1,22 @@
 Transactions = new Mongo.Collection('transactions')
 
-Transactions.allow({
-    insert: function(userId, doc) {
-        return !!userId
-    }
-})
-
 TransactionSchema = new SimpleSchema({
     key: {
         type: Number,
         label: "Key Number",
-        unique: true
+        unique: true,
+        min: 0,
+        max: 999999999
     },
     employee: {
         type: String,
         label: "Employee ID",
         optional: function() {
             return !this.isInsert
-        }
+        },
+        regEx: /^[0-9]+[NCV]$/,
+        min: 4,
+        max: 128
     },
     checkedOut: {
         type: Date,
