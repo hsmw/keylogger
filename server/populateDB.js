@@ -32,6 +32,14 @@ Meteor.startup(function(){
         }
     })
 
+    Trainings.remove({}, (err,numRm) => {
+        if (err) {
+            console.log("Error: ",err)
+        } else {
+            console.log("Training removed: ",numRm)
+        }
+    })
+
     let count = 10
 
     for (var i = 0; i < count; i++) {
@@ -56,6 +64,10 @@ Meteor.startup(function(){
         })
 
         Rules.insert({
+            name: faker.name.jobType()
+        })
+
+        Trainings.insert({
             name: faker.name.jobType()
         })
     }
