@@ -31,6 +31,17 @@ FlowRouter.route('/employees', {
     }
 })
 
+FlowRouter.route('/trainings', {
+    name: 'trainings',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'trainings',
+            footer: 'Footer'
+        })
+    }
+})
+
 FlowRouter.route('/transactions', {
     name: 'transactions',
     action() {
