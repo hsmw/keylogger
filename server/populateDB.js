@@ -46,7 +46,14 @@ Meteor.startup(function(){
         let keyNumber = faker.random.number({min:1000, max:99999}),
             keyName = faker.name.jobArea(),
             empName = faker.name.findName(),
-            empId = faker.random.number({min:100, max:50000}) + faker.random.arrayElement(["N","V","C"])
+            empId = faker.random.number({min:100, max:50000}) + faker.random.arrayElement(["N","V","C"]),
+            courseNum = faker.random.number({min:1,max:999999})
+
+        if (courseNum.length < 6) {
+            courseNum = new Array(6 - courseNum.length + 1).join(0) + courseNum
+        }
+
+        let courseCode = faker.random.arrayElement(["AD","FN"]) + courseNum
 
         Keys.insert({
             number: keyNumber,
@@ -68,7 +75,8 @@ Meteor.startup(function(){
         })
 
         Trainings.insert({
-            name: faker.name.jobType()
+            title: faker.name.jobDescriptor(),
+            code: courseCode
         })
     }
 })
