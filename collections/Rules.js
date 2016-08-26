@@ -7,6 +7,11 @@ RuleSchema = new SimpleSchema({
         min: 3,
         max: 128
     },
+    training: {
+        type: [String],
+        label: "Required Training",
+        optional: true
+    },
     createdAt: {
         type: Date,
         label: "Created At",

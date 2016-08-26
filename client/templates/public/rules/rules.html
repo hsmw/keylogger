@@ -3,6 +3,11 @@
     <ul class="list-group">
         {{#each rule}}
             <li class="list-group-item">{{name}}</li>
+            <ul>
+            {{#each training}}
+                    <li class="list-group-item">{{this}}</li>
+            {{/each}}
+            </ul>
         {{/each}}
     </ul>
 </template>
