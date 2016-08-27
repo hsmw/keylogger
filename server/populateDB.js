@@ -73,9 +73,7 @@ Meteor.startup(function(){
         Rules.insert({
             name: faker.name.jobType(),
             training: [
-                faker.name.jobDescriptor(),
-                faker.name.jobDescriptor(),
-                faker.name.jobDescriptor()
+                courseCode
             ]
         })
 
