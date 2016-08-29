@@ -15,6 +15,10 @@ TrainingSchema = new SimpleSchema({
         type: String,
         label: "Course Code"
     },
+    type: {
+        type: String,
+        label: "Course Type"
+    },
     createdAt: {
         type: Date,
         label: "Created At",

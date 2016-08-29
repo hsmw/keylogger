@@ -1,0 +1,7 @@
+<template name="employee">
+    <ul class="list-group">
+        {{#each employee}}
+            <a href={{this.href}} target="_blank"><li class="list-group-item">{{this.text}}</li></a>
+        {{/each}}
+    </ul>
+</template>

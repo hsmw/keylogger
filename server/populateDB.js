@@ -54,7 +54,8 @@ Meteor.startup(function(){
             courseNum = new Array(6 - courseNum.length + 1).join(0) + courseNum
         }
 
-        let courseCode = faker.random.arrayElement(["AD","FN"]) + courseNum
+        let courseCode = faker.random.arrayElement(["AD","FN"]) + courseNum,
+            courseType = faker.random.arrayElement(["OJ","CR","CB"])
 
         Keys.insert({
             number: keyNumber,
@@ -82,7 +83,8 @@ Meteor.startup(function(){
 
         Trainings.insert({
             title: faker.name.jobDescriptor(),
-            code: courseCode
+            code: courseCode,
+            type: courseType
         })
     }
 })
