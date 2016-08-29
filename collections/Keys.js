@@ -14,6 +14,10 @@ KeySchema = new SimpleSchema({
         min: 3,
         max: 128
     },
+    rules: {
+        type: [String],
+        label: "Rules"
+    },
     createdAt: {
         type: Date,
         label: "Created At",

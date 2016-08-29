@@ -16,6 +16,10 @@ EmployeeSchema = new SimpleSchema({
         label: "Employee ID",
         unique: true
     },
+    training: {
+        type: [String],
+        label: "Training"
+    },
     createdAt: {
         type: Date,
         label: "Created At",
