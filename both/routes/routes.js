@@ -31,6 +31,17 @@ FlowRouter.route('/employees', {
     }
 })
 
+FlowRouter.route('/employees/:empId', {
+    name: 'employee',
+    action: function(params, queryParams) {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'employee',
+            footer: 'Footer'
+        })
+    }
+});
+
 FlowRouter.route('/trainings', {
     name: 'trainings',
     action() {

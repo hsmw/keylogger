@@ -1,12 +1,7 @@
 <template name="employees">
     <ul class="list-group">
         {{#each employee}}
-            <li class="list-group-item">{{name}} {{empId}}</li>
-            <ul>
-            {{#each training}}
-                <li class="list-group-item">{{this}}</li>
-            {{/each}}
-            </ul>
+            <a href=/employees/{{empId}}><li class="list-group-item">{{name}} {{empId}}</li></a>
         {{/each}}
     </ul>
 </template>
