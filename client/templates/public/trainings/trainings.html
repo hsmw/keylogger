@@ -1,7 +1,7 @@
 <template name="trainings">
     <ul class="list-group">
         {{#each training}}
-            <li class="list-group-item">{{code}} {{title}}</li>
+            <a href={{href}} target="_blank"><li class="list-group-item">{{code}} {{title}}</li></a>
         {{/each}}
     </ul>
 </template>
