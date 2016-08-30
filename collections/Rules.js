@@ -10,7 +10,12 @@ RuleSchema = new SimpleSchema({
     training: {
         type: [String],
         label: "Required Training",
-        optional: true
+        optional: true,
+        autoValue: function() {
+            if (this.isInsert) {
+                return [];
+            }
+        }
     },
     createdAt: {
         type: Date,

@@ -75,10 +75,17 @@ Meteor.startup(function(){
         })
 
         Rules.insert({
-            name: rulesName,
-            training: [
-                courseCode
-            ]
+            name: rulesName
+        })
+
+        Rules.update({
+            name: rulesName
+        },{
+            $set: {
+                training: [
+                    courseCode
+                ]
+            }
         })
 
         Trainings.insert({

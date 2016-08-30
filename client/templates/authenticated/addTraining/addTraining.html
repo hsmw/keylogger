@@ -1,0 +1,9 @@
+<template name="addTraining">
+    {{#autoForm collection="Rules" id="updateRuleForm" type="update" doc=this}}
+        <fieldset>
+            {{> afQuickField name='training'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Add Training</button>
+    {{/autoForm}}
+    <br>
+</template>

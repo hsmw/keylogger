@@ -74,3 +74,14 @@ FlowRouter.route('/rules', {
         })
     }
 })
+
+FlowRouter.route('/rules/:name', {
+    name: 'rule',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'rule',
+            footer: 'Footer'
+        })
+    }
+})
