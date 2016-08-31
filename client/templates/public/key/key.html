@@ -1,0 +1,12 @@
+<template name="key">
+    {{> addRules}}
+    {{#if Template.subscriptionsReady}}
+        <ul class="list-group">
+            {{#each key}}
+                <a href=/rules/{{name}}><li class="list-group-item">{{name}}</li></a>
+            {{/each}}
+        </ul>
+    {{else}}
+        Loading...
+    {{/if}}
+</template>

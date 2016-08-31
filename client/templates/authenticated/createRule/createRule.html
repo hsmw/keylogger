@@ -1,5 +1,9 @@
 <template name="createRule">
-    {{#if currentUser}} {{! This will need to change to admin}}
-        {{> quickForm collection="Rules" id="createRuleForm" type="method" meteormethod="newRule" class=""}}
-    {{/if}}
+    {{#autoForm collection="Rules" id="createRuleForm" type="insert"}}
+        <fieldset>
+            {{> afQuickField name='name'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Create Rule</button>
+    {{/autoForm}}
+    <br>
 </template>

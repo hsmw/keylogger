@@ -20,6 +20,17 @@ FlowRouter.route('/keys', {
     }
 })
 
+FlowRouter.route('/keys/:number', {
+    name: 'key',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'key',
+            footer: 'Footer'
+        })
+    }
+})
+
 FlowRouter.route('/employees', {
     name: 'employees',
     action() {
@@ -30,6 +41,17 @@ FlowRouter.route('/employees', {
         })
     }
 })
+
+FlowRouter.route('/employees/:empId', {
+    name: 'employee',
+    action: function(params, queryParams) {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'employee',
+            footer: 'Footer'
+        })
+    }
+});
 
 FlowRouter.route('/trainings', {
     name: 'trainings',
@@ -59,6 +81,17 @@ FlowRouter.route('/rules', {
         BlazeLayout.render('applicationLayout', {
             header: 'Header',
             body: 'rules',
+            footer: 'Footer'
+        })
+    }
+})
+
+FlowRouter.route('/rules/:name', {
+    name: 'rule',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'rule',
             footer: 'Footer'
         })
     }

@@ -2,7 +2,7 @@
     {{> createRule}}
     <ul class="list-group">
         {{#each rule}}
-            <li class="list-group-item">{{name}}</li>
+            <a href=/rules/{{name}}><li class="list-group-item">{{name}}</li></a>
         {{/each}}
     </ul>
 </template>

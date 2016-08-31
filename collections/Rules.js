@@ -7,6 +7,16 @@ RuleSchema = new SimpleSchema({
         min: 3,
         max: 128
     },
+    training: {
+        type: [String],
+        label: "Required Training",
+        optional: true,
+        autoValue: function() {
+            if (this.isInsert) {
+                return [];
+            }
+        }
+    },
     createdAt: {
         type: Date,
         label: "Created At",

@@ -1,6 +1,7 @@
-<template name="trainings">
+<template name="rule">
+    {{> addTraining}}
     <ul class="list-group">
-        {{#each training}}
+        {{#each rule}}
             <a href={{href}} target="_blank"><li class="list-group-item">{{code}} {{title}}</li></a>
         {{/each}}
     </ul>

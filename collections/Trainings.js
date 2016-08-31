@@ -7,9 +7,17 @@ Trainings.deny({
 })
 
 TrainingSchema = new SimpleSchema({
-    name: {
+    title: {
         type: String,
-        label: "Training Name"
+        label: "Course Title"
+    },
+    code: {
+        type: String,
+        label: "Course Code"
+    },
+    type: {
+        type: String,
+        label: "Course Type"
     },
     createdAt: {
         type: Date,

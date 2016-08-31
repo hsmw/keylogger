@@ -46,16 +46,36 @@ Meteor.startup(function(){
         let keyNumber = faker.random.number({min:1000, max:99999}),
             keyName = faker.name.jobArea(),
             empName = faker.name.findName(),
-            empId = faker.random.number({min:100, max:50000}) + faker.random.arrayElement(["N","V","C"])
+            empId = faker.random.number({min:100, max:50000}) + faker.random.arrayElement(["N","V","C"]),
+            courseNum = faker.random.number({min:1,max:999999}),
+            rulesName = faker.name.jobType()
+
+        if (courseNum.length < 6) {
+            courseNum = new Array(6 - courseNum.length + 1).join(0) + courseNum
+        }
+
+        let courseCode = faker.random.arrayElement(["AD","FN"]) + courseNum,
+            courseType = faker.random.arrayElement(["OJ","CR","CB"])
 
         Keys.insert({
             number: keyNumber,
             name: keyName
         })
 
+        Keys.update({
+            number: keyNumber
+        },{
+            $set: {
+                rules: [
+                    rulesName
+                ]
+            }
+        })
+
         Employees.insert({
             name: empName,
-            empId: empId
+            empId: empId,
+            training: [courseCode]
         })
 
         Transactions.insert({
@@ -64,11 +84,23 @@ Meteor.startup(function(){
         })
 
         Rules.insert({
-            name: faker.name.jobType()
+            name: rulesName
+        })
+
+        Rules.update({
+            name: rulesName
+        },{
+            $set: {
+                training: [
+                    courseCode
+                ]
+            }
         })
 
         Trainings.insert({
-            name: faker.name.jobType()
+            title: faker.name.jobDescriptor(),
+            code: courseCode,
+            type: courseType
         })
     }
 })
