@@ -20,6 +20,17 @@ FlowRouter.route('/keys', {
     }
 })
 
+FlowRouter.route('/keys/:number', {
+    name: 'key',
+    action() {
+        BlazeLayout.render('applicationLayout', {
+            header: 'Header',
+            body: 'key',
+            footer: 'Footer'
+        })
+    }
+})
+
 FlowRouter.route('/employees', {
     name: 'employees',
     action() {

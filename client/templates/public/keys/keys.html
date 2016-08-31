@@ -2,12 +2,7 @@
     {{> createKey}}
     <ul class="list-group">
         {{#each key}}
-            <li class="list-group-item">{{number}} {{name}}</li>
-            <ul>
-            {{#each rules}}
-                <li class="list-group-item">{{this}}</li>
-            {{/each}}
-            </ul>
+            <a href=/keys/{{number}}><li class="list-group-item">{{name}} {{number}}</li></a>
         {{/each}}
     </ul>
 </template>

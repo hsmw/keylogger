@@ -9,8 +9,7 @@ Template.rule.onCreated(function() {
 Template.rule.helpers({
     rule: function() {
         let ruleName = FlowRouter.getParam("name")
-        console.log(ruleName)
-        let ruleArray =  Rules.findOne({
+        let ruleArray = Rules.findOne({
                             name: ruleName
                         },{
                             fields:{
@@ -31,7 +30,7 @@ Template.rule.helpers({
                         obj.href = "http://www-esh.fnal.gov/pls/default/schedule.show_course_details?this_fermi_id=0&this_course_code="+obj.code+"&this_instr_type="+obj.type
                         return obj
                     })
-        console.log(ruleArray)
+
         return result
     }
 })

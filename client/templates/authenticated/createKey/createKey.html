@@ -1,5 +1,10 @@
 <template name="createKey">
-    {{#if currentUser}} {{! This will need to change to admin}}
-        {{> quickForm collection="Keys" id="createKeyForm" type="method" meteormethod="newKey" class=""}}
-    {{/if}}
+    {{#autoForm collection="Keys" id="createKeyForm" type="insert"}}
+        <fieldset>
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='number'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Create Key</button>
+    {{/autoForm}}
+    <br>
 </template>

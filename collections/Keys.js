@@ -16,7 +16,12 @@ KeySchema = new SimpleSchema({
     },
     rules: {
         type: [String],
-        label: "Rules"
+        label: "Rules",
+        autoValue: function() {
+            if (this.isInsert) {
+                return [];
+            }
+        }
     },
     createdAt: {
         type: Date,

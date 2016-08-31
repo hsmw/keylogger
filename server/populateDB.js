@@ -59,8 +59,17 @@ Meteor.startup(function(){
 
         Keys.insert({
             number: keyNumber,
-            name: keyName,
-            rules: [rulesName]
+            name: keyName
+        })
+
+        Keys.update({
+            number: keyNumber
+        },{
+            $set: {
+                rules: [
+                    rulesName
+                ]
+            }
         })
 
         Employees.insert({
