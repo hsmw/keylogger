@@ -1,5 +1,11 @@
 Transactions = new Mongo.Collection('transactions')
 
+Transactions.deny({
+    insert() { return true },
+    update() { return true },
+    remove() { return true }
+})
+
 TransactionSchema = new SimpleSchema({
     key: {
         type: Number,

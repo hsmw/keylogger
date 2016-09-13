@@ -1,5 +1,5 @@
 Template.keys.onCreated(function() {
-    var self = this
+    let self = this
     self.autorun(function() {
         self.subscribe('keys')
     })
