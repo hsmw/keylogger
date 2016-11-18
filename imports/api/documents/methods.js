@@ -1,6 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ValidatedMethod } from 'meteor/mdg:validated-method';
 import Documents from './documents';
+import Transactions from './transactions';
 import rateLimit from '../../modules/rate-limit.js';
 
 export const upsertDocument = new ValidatedMethod({
@@ -15,6 +16,18 @@ export const upsertDocument = new ValidatedMethod({
   },
 });
 
+export const upsertTransaction = new ValidatedMethod({
+  name: 'transactions.upsert',
+  validate: new SimpleSchema({
+    _id: { type: String, optional: true },
+    title: { type: String, optional: true },
+    body: { type: String, optional: true },
+  }).validator(),
+  run(transaction) {
+    return Transactions.upsert({ _id: transaction._id }, { $set: transaction });
+  },
+});
+
 export const removeDocument = new ValidatedMethod({
   name: 'documents.remove',
   validate: new SimpleSchema({
@@ -25,10 +38,22 @@ export const removeDocument = new ValidatedMethod({
   },
 });
 
+export const removeTransaction = new ValidatedMethod({
+  name: 'transactions.remove',
+  validate: new SimpleSchema({
+    _id: { type: String },
+  }).validator(),
+  run({ _id }) {
+    Transactions.remove(_id);
+  },
+});
+
 rateLimit({
   methods: [
     upsertDocument,
+    upsertTransaction,
     removeDocument,
+    removeTransaction,
   ],
   limit: 5,
   timeRange: 1000,

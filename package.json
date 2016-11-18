@@ -1,7 +1,7 @@
 {
-  "name": "application-name",
-  "version": "1.0.0",
-  "description": "Application description.",
+  "name": "fermi-key-logger",
+  "version": "0.1.0",
+  "description": "A persistent browser interface to track key uses and key qualifications.",
   "scripts": {
     "start": "meteor --settings settings-development.json",
     "test": "meteor test --driver-package practicalmeteor:mocha --port 5000",
