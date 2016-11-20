@@ -7,7 +7,7 @@ import transactionEditor from '../../modules/transaction-editor.js';
 export default class TransactionEditor extends React.Component {
   componentDidMount() {
     transactionEditor({ component: this });
-    setTimeout(() => { document.querySelector('[name="title"]').focus(); }, 0);
+    setTimeout(() => { document.querySelector('[name="key"]').focus(); }, 0);
   }
 
   render() {
@@ -17,21 +17,21 @@ export default class TransactionEditor extends React.Component {
       onSubmit={ event => event.preventDefault() }
     >
       <FormGroup>
-        <ControlLabel>Title</ControlLabel>
+        <ControlLabel>Key</ControlLabel>
         <FormControl
-          type="text"
-          name="title"
-          defaultValue={ trans && trans.title }
-          placeholder="Oh, The Places You'll Go!"
+          type="number"
+          name="key"
+          defaultValue={ trans && trans.key }
+          placeholder="1234"
         />
       </FormGroup>
       <FormGroup>
-        <ControlLabel>Body</ControlLabel>
+        <ControlLabel>Employee</ControlLabel>
         <FormControl
-          componentClass="textarea"
-          name="body"
-          defaultValue={ trans && trans.body }
-          placeholder="Congratulations! Today is your day. You're off to Great Places! You're off and away!"
+          type="text"
+          name="employee"
+          defaultValue={ trans && trans.employee }
+          placeholder="12345V"
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">

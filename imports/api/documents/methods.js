@@ -20,11 +20,11 @@ export const upsertTransaction = new ValidatedMethod({
   name: 'transactions.upsert',
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
-    title: { type: String, optional: true },
-    body: { type: String, optional: true },
+    key: { type: Number, optional: true },
+    employee: { type: String, optional: true },
   }).validator(),
-  run(transaction) {
-    return Transactions.upsert({ _id: transaction._id }, { $set: transaction });
+  run(document) {
+    return Transactions.upsert({ _id: document._id }, { $set: document });
   },
 });
 

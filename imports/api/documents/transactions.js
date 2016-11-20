@@ -18,19 +18,25 @@ Transactions.deny({
 });
 
 Transactions.schema = new SimpleSchema({
-  title: {
-    type: String,
-    label: 'The title of the transaction.',
+  key: {
+    type: Number,
+    label: 'Key identification number',
+    unique: true,
+    min: 0,
+    max: 1000000000,
   },
-  body: {
+  employee: {
     type: String,
-    label: 'The body of the transaction.',
+    label: 'Fermilab employee identification',
+    regEx: /^[0-9]+[NCV]$/,
+    min: 4,
+    max: 128,
   },
 });
 
 Transactions.attachSchema(Transactions.schema);
 
 Factory.define('transaction', Transactions, {
-  title: () => 'Factory Title',
-  body: () => 'Factory Body',
+  key: () => 1234,
+  employee: () => '15660N',
 });

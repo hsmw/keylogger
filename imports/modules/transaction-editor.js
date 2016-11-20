@@ -11,19 +11,19 @@ const handleUpsert = () => {
   const { trans } = component.props;
   const confirmation = trans && trans._id ? 'Transaction updated!' : 'Transaction added!';
   const upsert = {
-    title: document.querySelector('[name="title"]').value.trim(),
-    body: document.querySelector('[name="body"]').value.trim(),
+    key: Number(document.querySelector('[name="key"]').value.trim()),
+    employee: document.querySelector('[name="employee"]').value.trim(),
   };
 
   if (trans && trans._id) upsert._id = trans._id;
 
-  upsertTransaction.call(upsert, (error, { insertedId }) => {
+  upsertTransaction.call(upsert, (error, response) => {
     if (error) {
       Bert.alert(error.reason, 'danger');
     } else {
       component.transactionEditorForm.reset();
       Bert.alert(confirmation, 'success');
-      browserHistory.push(`/transactions/${insertedId || trans._id}`);
+      browserHistory.push(`/transactions/${response.insertedId || trans._id}`);
     }
   });
 };
@@ -31,19 +31,19 @@ const handleUpsert = () => {
 const validate = () => {
   $(component.transactionEditorForm).validate({
     rules: {
-      title: {
+      key: {
         required: true,
       },
-      body: {
+      employee: {
         required: true,
       },
     },
     messages: {
-      title: {
-        required: 'Need a title in here, Seuss.',
+      key: {
+        required: 'Need a key in here.',
       },
-      body: {
-        required: 'This thneeds a body, please.',
+      employee: {
+        required: 'Need an employee ID here.',
       },
     },
     submitHandler() { handleUpsert(); },

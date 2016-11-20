@@ -20,7 +20,7 @@ const handleRemove = (_id) => {
 const ViewTransaction = ({ trans }) => (
   <div className="ViewTransaction">
     <div className="page-header clearfix">
-      <h4 className="pull-left">{ trans.title }</h4>
+      <h4 className="pull-left">{ trans.key }</h4>
       <ButtonToolbar className="pull-right">
         <ButtonGroup bsSize="small">
           <Button href={`/transactions/${trans._id}/edit`}>Edit</Button>
@@ -28,7 +28,7 @@ const ViewTransaction = ({ trans }) => (
         </ButtonGroup>
       </ButtonToolbar>
     </div>
-    { trans.body }
+    { trans.employee }
   </div>
 );
 
